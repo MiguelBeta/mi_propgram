@@ -1,0 +1,63 @@
+<resources>
+    <string name="app_name">mi_propgram</string>
+
+    <!-- Botones> -->
+     <string name="ingresar">ingresar</string>
+     <string name="nuevo_usuario">nuevoUsuario</string>
+     <string name="modificar_informacion">modificarInfo</string>
+     <string name="reportes">reportes</string>
+    <string name="registrar">registrar</string>
+
+    <!-- Componentes de radio button> -->
+    <string name="rb_masculino">Masculino</string>
+    <string name="rb_femenino">Femenino</string>
+    <string name="rb_otro">Otro</string>
+
+    <string name="rb_portero">Portero</string>
+    <string name="rb_administrador">Administrador</string>
+    <string name="rb_medico">Medico</string>
+    <string name="rb_administrativo">Administrativo</string>
+
+    <!-- Componentes de datos de usuario -->
+    <string name="txtNombre">Nombre</string>
+    <string name="txtCedula">Cedula</string>
+    <string name="txtTelefono">Telefono</string>
+    <string name="txtDireccion">Direccion</string>
+    <string name="txtContraseña">Contrasena</string>
+
+
+
+    <!-- Componentes de Spinner de roles -->
+    <string-array name="roles">
+        <item>
+            administrador
+        </item>
+        <item>
+            medico
+        </item>
+        <item>
+            Administrativo
+        </item>
+        <item>
+            portero
+        </item>
+    </string-array>
+
+    <!-- Componentes de Spinner de genero -->
+    <string-array name="genero">
+        <item>
+            Mujer
+        </item>
+        <item>
+            Hombre
+        </item>
+        <item>
+            Otro
+        </item>
+    </string-array>
+
+    
+
+
+
+</resources>

@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="241dp"
+        android:layout_marginBottom="129dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@mipmap/logofondo" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="596dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@mipmap/rectangulotitulo" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="117dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginEnd="116dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView6"
+        app:srcCompat="@mipmap/imagencorpo" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="587dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6"
+        app:srcCompat="@mipmap/gruponueve" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@mipmap/rectanguloabajo" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="44dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:srcCompat="@mipmap/linea" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="2dp"
+        android:fontFamily="@font/arial_rounded_mt_bold"
+        android:text="HOSPITAL SUSANA LOPEZ DE VALENCIA"
+        android:textColor="@color/verde_oscuro"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:fontFamily="@font/arial_rounded_mt_bold"
+        android:text="SOFTWARE PARA INGRESO Y VALIDACION DE PACIANTES PARA  CITAS DE CONSULTA EXTERNA"
+        android:textAlignment="center"
+        android:textColor="@color/verde_oscuro"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_nuevoUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="212dp"
+        android:layout_marginEnd="84dp"
+        android:fontFamily="@font/arial_rounded_mt_bold"
+        android:text="NUEVO USUARIO"
+        android:textColor="@color/azul"
+        android:textSize="20sp"
+        android:typeface="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtNombre"
+        android:layout_width="273dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="248dp"
+        android:layout_marginEnd="98dp"
+        android:backgroundTint="@color/verde_oscuro"
+        android:drawableTint="@color/verde_oscuro"
+        android:ems="10"
+        android:fontFamily="@font/arial_rounded_mt_bold"
+        android:foregroundTint="@color/verde_oscuro"
+        android:hint="NOMBRES Y APELLIDOS"
+        android:inputType="text"
+        android:shadowColor="#2B722A"
+        android:textColor="#2B722A"
+        android:textColorHighlight="#2B722A"
+        android:textColorHint="#662B722A"
+        android:textColorLink="@color/verde_oscuro"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtCedula"
+        android:layout_width="273dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="2dp"
+        android:backgroundTint="@color/verde_oscuro"
+        android:ems="10"
+        android:fontFamily="@font/arial_rounded_mt_bold"
+        android:hint="No. CEDULA"
+        android:inputType="number"
+        android:textColorHint="#662B722A"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNombre" />
+
+    <EditText
+        android:id="@+id/txtTelefono"
+        android:layout_width="273dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="2dp"
+        android:backgroundTint="@color/verde_oscuro"
+        android:ems="10"
+        android:fontFamily="@font/arial_rounded_mt_bold"
+        android:hint="No. TELEFONO"
+        android:inputType="number"
+        android:textColorHint="#662B722A"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtCedula" />
+
+    <EditText
+        android:id="@+id/txtDireccion"
+        android:layout_width="273dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="2dp"
+        android:backgroundTint="@color/verde_oscuro"
+        android:drawableTint="@color/verde_oscuro"
+        android:ems="10"
+        android:fontFamily="@font/arial_rounded_mt_bold"
+        android:foregroundTint="@color/verde_oscuro"
+        android:hint="DIRECCION"
+        android:inputType="text"
+        android:shadowColor="#2B722A"
+        android:textColor="#2B722A"
+        android:textColorHighlight="#2B722A"
+        android:textColorHint="#662B722A"
+        android:textColorLink="@color/verde_oscuro"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTelefono" />
+
+
+    <EditText
+        android:id="@+id/txtContraseña"
+        android:layout_width="273dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="2dp"
+        android:backgroundTint="@color/verde_oscuro"
+        android:ems="10"
+        android:fontFamily="@font/arial_rounded_mt_bold"
+        android:hint="CONTRASEÑA"
+        android:inputType="numberPassword"
+        android:textColorHint="#662B722A"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDireccion" />
+
+    <EditText
+        android:id="@+id/txtFechaNacimiento"
+        android:layout_width="273dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="40dp"
+        android:backgroundTint="@color/verde_oscuro"
+        android:ems="10"
+        android:fontFamily="@font/arial_rounded_mt_bold"
+        android:hint="FECHA NACIMIENTO"
+        android:inputType="date"
+        android:textColorHint="#662B722A"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtContraseña" />
+
+    <Spinner
+        android:id="@+id/spinnerRoles"
+        android:layout_width="273dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="2dp"
+        android:entries="@array/roles"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtFechaNacimiento" />
+
+    <Spinner
+        android:id="@+id/spinnerGenero"
+        android:layout_width="273dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="2dp"
+        android:entries="@array/genero"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerRoles" />
+
+    <ImageButton
+        android:id="@+id/btnRegistrar"
+        android:layout_width="106dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="139dp"
+        android:layout_marginEnd="166dp"
+        android:layout_marginBottom="2dp"
+        android:contentDescription="@string/registrar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@mipmap/registrar" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
