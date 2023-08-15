@@ -23,10 +23,13 @@ import java.util.UUID;
 
 public class MainActivity extends AppCompatActivity {
 
+    //Comentario de PRUEBA
+
     EditText txtNombre, txtCedula, txtTelefono, txtDireccion,txtContraseña, txtFechaNacimiento;
     Spinner spinnerRoles, spinnerGenero;
     //Button btnRegistrar;
     ImageButton btnRegistrar;
+
 
     AutoCompleteTextView autoCompleteTxt;
 
