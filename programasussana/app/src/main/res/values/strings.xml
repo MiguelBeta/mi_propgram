@@ -2,10 +2,10 @@
     <string name="app_name">mi_propgram</string>
 
     <!-- Botones> -->
-     <string name="ingresar">ingresar</string>
-     <string name="nuevo_usuario">nuevoUsuario</string>
-     <string name="modificar_informacion">modificarInfo</string>
-     <string name="reportes">reportes</string>
+    <string name="ingresar">ingresar</string>
+    <string name="nuevo_usuario">nuevoUsuario</string>
+    <string name="modificar_informacion">modificarInfo</string>
+    <string name="reportes">reportes</string>
     <string name="registrar">registrar</string>
 
     <!-- Componentes de radio button> -->
@@ -24,7 +24,8 @@
     <string name="txtTelefono">Telefono</string>
     <string name="txtDireccion">Direccion</string>
     <string name="txtContraseña">Contrasena</string>
-
+    <string name="name_hospital">HOSPITAL SUSANA LOPEZ DE VALENCIA</string>
+    <string name="explication_software">SOFTWARE PARA INGRESO Y VALIDACION DE PACIANTES PARA CITAS DE CONSULTA EXTERNA</string>
 
 
     <!-- Componentes de Spinner de roles -->
@@ -55,9 +56,6 @@
             Otro
         </item>
     </string-array>
-
-    
-
 
 
 </resources>

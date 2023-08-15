@@ -4,8 +4,11 @@
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
          <item name="colorPrimary">@color/white</item> -->
+        <item name="colorPrimaryVariant">@color/verde_oscuro</item>
         <item name="windowActionBar">false</item>
         <item name="android:windowNoTitle">true</item>
+        <item name="android:statusBarColor">@color/verde_oscuro</item>
+
     </style>
 
     <style name="Theme.Mi_propgram" parent="Base.Theme.Mi_propgram" />
