@@ -18,12 +18,13 @@ public class DataFileUsers {
     public String turnoMedicoMedicoCodigo;
     public String turnoMedicoMedicoNombreCompleto;
     public String turnoMedicoentroAtencionNombre;
+    public String estado;
 
 
     public DataFileUsers() {
     }
 
-    public DataFileUsers(String actividadNombre, String duracion, String especialidadDescripcion, String fechaInicialCita, String pacienteDocumento, String pacienteNombre, String pacienteTelefono, String pacienteEdadPaciente, String pacienteSexo, String tipoCita, String turnoMedicoCentroAtencionCodigo, String turnoMedicoFechaTurno, String turnoMedicoMedicoCodigo, String turnoMedicoMedicoNombreCompleto, String turnoMedicoentroAtencionNombre) {
+    public DataFileUsers(String actividadNombre, String duracion, String especialidadDescripcion, String fechaInicialCita, String pacienteDocumento, String pacienteNombre, String pacienteTelefono, String pacienteEdadPaciente, String pacienteSexo, String tipoCita, String turnoMedicoCentroAtencionCodigo, String turnoMedicoFechaTurno, String turnoMedicoMedicoCodigo, String turnoMedicoMedicoNombreCompleto, String turnoMedicoentroAtencionNombre, String estado) {
         this.actividadNombre = actividadNombre;
         this.duracion = duracion;
         this.especialidadDescripcion = especialidadDescripcion;
@@ -39,6 +40,7 @@ public class DataFileUsers {
         this.turnoMedicoMedicoCodigo = turnoMedicoMedicoCodigo;
         this.turnoMedicoMedicoNombreCompleto = turnoMedicoMedicoNombreCompleto;
         this.turnoMedicoentroAtencionNombre = turnoMedicoentroAtencionNombre;
+        this.estado = estado;
     }
 
     @Override
@@ -59,6 +61,7 @@ public class DataFileUsers {
                 ", turnoMedicoMedicoCodigo='" + turnoMedicoMedicoCodigo + '\'' +
                 ", turnoMedicoMedicoNombreCompleto='" + turnoMedicoMedicoNombreCompleto + '\'' +
                 ", turnoMedicoentroAtencionNombre='" + turnoMedicoentroAtencionNombre + '\'' +
+                ", estado='" + estado + '\'' +
                 '}';
     }
 }

@@ -1,9 +1,12 @@
 package com.example.mi_propgram.controller;
 
+import static com.example.mi_propgram.utils.Constantes.ESTADO_PENDIENTE;
+
 import android.content.Context;
 import android.net.Uri;
 
 import com.example.mi_propgram.models.DataFileUsers;
+import com.example.mi_propgram.utils.Constantes;
 import com.google.firebase.database.DatabaseReference;
 
 import org.apache.commons.csv.CSVFormat;
@@ -39,7 +42,8 @@ public class CsvDataImporter {
                         record.get("TurnoMedicoFechaTurno"),
                         record.get("TurnoMedicoMedicoCodigo"),
                         record.get("TurnoMedicoMedicoNombreCompleto"),
-                        record.get("TurnoMedicoCentroAtencionNombre")
+                        record.get("TurnoMedicoCentroAtencionNombre"),
+                        ESTADO_PENDIENTE
                 );
 
                 databaseReference.child("datosPacientes").child(dataModel.pacienteDocumento).setValue(dataModel);
