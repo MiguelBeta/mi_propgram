@@ -14,14 +14,14 @@ public class ReadCredentialsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_read_credentials);
 
-        BuscarPacienteDocumento.buscarUsuario("1431846", new BuscarPacienteDocumento.RegistroCallback() {
+        BuscarPacienteDocumento.buscarUsuario("1431846", new BuscarPacienteDocumento.RegisterCallback() {
             @Override
-            public void onRegistroEncontrado(DataFileUsers registro) {
+            public void onFindRegister(DataFileUsers registro) {
 
             }
 
             @Override
-            public void onRegistroNoEncontrado() {
+            public void onNotFoundRegister() {
 
             }
         });

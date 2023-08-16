@@ -15,15 +15,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ProgressBar
+        android:id="@+id/idProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:progressTint="@color/azul"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ScrollView
+        android:visibility="gone"
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="58dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/include">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingBottom="100dp">
 
 
             <ImageView
@@ -39,7 +55,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/idTxtNamePerson"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/Size10dp"
@@ -53,7 +69,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView8" />
 
-
             <LinearLayout
                 android:id="@+id/linearLayout"
                 android:layout_width="wrap_content"
@@ -62,7 +77,7 @@
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView">
+                app:layout_constraintTop_toBottomOf="@+id/idTxtNamePerson">
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
@@ -204,6 +219,7 @@
                         android:textSize="@dimen/Size14sp" />
 
                     <TextView
+                        android:id="@+id/idTxtAge"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/arial_rounded_mt_bold"
@@ -215,6 +231,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/cardView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/Size10dp"
@@ -242,6 +259,7 @@
                         android:textSize="@dimen/Size14sp" />
 
                     <TextView
+                        android:id="@+id/idTxtTypeQuote"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/arial_rounded_mt_bold"
@@ -253,116 +271,294 @@
 
             </androidx.cardview.widget.CardView>
 
-            <LinearLayout
-                android:layout_marginBottom="@dimen/Size32dp"
-                android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/idTxtNameHospital"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="@dimen/Size32dp"
+                android:layout_marginBottom="@dimen/Size20dp"
+                android:fontFamily="@font/arial_rounded_mt_bold"
+                android:text="HOSPITAL SUSANA LOPEZ DE VALENCIA E.S.E  SEDE SAN CAMILO"
+                android:textAlignment="center"
+                android:textColor="@color/azul"
+                android:textSize="@dimen/Size20sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardView">
+                app:layout_constraintTop_toBottomOf="@+id/cardView2" />
 
-                <LinearLayout
-                    android:id="@+id/idLayoutDateQuote"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/Size10dp"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:paddingStart="@dimen/Size20dp"
-                    android:paddingTop="@dimen/Size32dp"
-                    android:paddingEnd="@dimen/Size20dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/cardView">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/arial_rounded_mt_bold"
-                        android:text="FechaInicialCita: "
-                        android:textColor="@color/azul"
-                        android:textSize="@dimen/Size14sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/arial_rounded_mt_bold"
-                        android:text="13/07/2023 9:30:00 a. m."
-                        android:textColor="@color/azul"
-                        android:textSize="@dimen/Size20sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/linearLayout2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/Size10dp"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:paddingStart="@dimen/Size20dp"
-                    android:paddingEnd="@dimen/Size20dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/idLayoutDateQuote">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/arial_rounded_mt_bold"
-                        android:text="Duracion: "
-                        android:textColor="@color/azul"
-                        android:textSize="@dimen/Size14sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/arial_rounded_mt_bold"
-                        android:text="01/01/2009 12:30:00 a. m."
-                        android:textColor="@color/azul"
-                        android:textSize="@dimen/Size20sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/Size10dp"
+                android:layout_marginStart="@dimen/Size20dp"
+                android:layout_marginTop="@dimen/Size20dp"
+                android:layout_marginEnd="@dimen/Size20dp"
+                android:elevation="@dimen/Size8dp"
+                app:cardCornerRadius="@dimen/Size8dp"
+                app:cardElevation="@dimen/Size8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/idTxtNameHospital">
 
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/Size10dp"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:paddingStart="@dimen/Size20dp"
-                    android:paddingEnd="@dimen/Size20dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+                    android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="@color/verde_oscuro"
                         android:fontFamily="@font/arial_rounded_mt_bold"
-                        android:text="Actividad: "
-                        android:textColor="@color/azul"
-                        android:textSize="@dimen/Size14sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/arial_rounded_mt_bold"
-                        android:text="CONSULTA EN CPCU CON RESULTADOS"
-                        android:textColor="@color/azul"
+                        android:padding="@dimen/Size10dp"
+                        android:text="Información"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/Size20sp"
                         android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:id="@+id/idLayoutDateQuote"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/Size10dp"
+                        android:layout_marginTop="@dimen/Size8dp"
+                        android:layout_marginEnd="@dimen/Size10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/arial_rounded_mt_bold"
+                            android:text="FechaInicialCita: "
+                            android:textColor="@color/azul"
+                            android:textSize="@dimen/Size14sp" />
+
+                        <TextView
+                            android:id="@+id/idTxtInitialDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/arial_rounded_mt_bold"
+                            android:text="13/07/2023 9:30:00 a. m."
+                            android:textColor="@color/azul"
+                            android:textSize="@dimen/Size20sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/Size10dp"
+                        android:layout_marginTop="@dimen/Size8dp"
+                        android:layout_marginEnd="@dimen/Size10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/idLayoutDateQuote">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/arial_rounded_mt_bold"
+                            android:text="Duracion: "
+                            android:textColor="@color/azul"
+                            android:textSize="@dimen/Size14sp" />
+
+                        <TextView
+                            android:id="@+id/idTxtDuration"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/arial_rounded_mt_bold"
+                            android:text="01/01/2009 12:30:00 a. m."
+                            android:textColor="@color/azul"
+                            android:textSize="@dimen/Size20sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/Size10dp"
+                        android:layout_marginTop="@dimen/Size8dp"
+                        android:layout_marginEnd="@dimen/Size10dp"
+                        android:layout_marginBottom="@dimen/Size8dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/arial_rounded_mt_bold"
+                            android:text="Actividad: "
+                            android:textColor="@color/azul"
+                            android:textSize="@dimen/Size14sp" />
+
+                        <TextView
+                            android:id="@+id/idTxtActivity"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/arial_rounded_mt_bold"
+                            android:text="CONSULTA EN CPCU CON RESULTADOS"
+                            android:textColor="@color/azul"
+                            android:textSize="@dimen/Size20sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
                 </LinearLayout>
-            </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/Size10dp"
+                android:layout_marginStart="@dimen/Size20dp"
+                android:layout_marginEnd="@dimen/Size20dp"
+                android:elevation="@dimen/Size8dp"
+                app:cardCornerRadius="@dimen/Size8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/cardView3"
+                app:layout_constraintStart_toStartOf="@+id/cardView3"
+                app:layout_constraintTop_toBottomOf="@+id/cardView3">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/verde_oscuro"
+                        android:fontFamily="@font/arial_rounded_mt_bold"
+                        android:padding="@dimen/Size10dp"
+                        android:text="Información del profesional"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/Size20sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/Size10dp"
+                        android:layout_marginTop="@dimen/Size8dp"
+                        android:layout_marginEnd="@dimen/Size10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/arial_rounded_mt_bold"
+                            android:text="Nombre medico: "
+                            android:textColor="@color/azul"
+                            android:textSize="@dimen/Size14sp" />
+
+                        <TextView
+                            android:id="@+id/idTxtNameDoctor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/arial_rounded_mt_bold"
+                            android:text="ACOSTA ARAGON MARIA PIEDAD"
+                            android:textColor="@color/azul"
+                            android:textSize="@dimen/Size20sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/Size10dp"
+                        android:layout_marginTop="@dimen/Size8dp"
+                        android:layout_marginEnd="@dimen/Size10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/idLayoutDateQuote">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/arial_rounded_mt_bold"
+                            android:text="Fecha turno: "
+                            android:textColor="@color/azul"
+                            android:textSize="@dimen/Size14sp" />
+
+                        <TextView
+                            android:id="@+id/idTxtTurnDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/arial_rounded_mt_bold"
+                            android:text="13/07/2023 12:00:00 a. m."
+                            android:textColor="@color/azul"
+                            android:textSize="@dimen/Size20sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/Size10dp"
+                        android:layout_marginTop="@dimen/Size8dp"
+                        android:layout_marginEnd="@dimen/Size10dp"
+                        android:layout_marginBottom="@dimen/Size8dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/arial_rounded_mt_bold"
+                            android:text="Especialidad: "
+                            android:textColor="@color/azul"
+                            android:textSize="@dimen/Size14sp" />
+
+                        <TextView
+                            android:id="@+id/idTxtSpecialty"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/arial_rounded_mt_bold"
+                            android:text="GINECOLOGIA Y OBSTETRICIA"
+                            android:textColor="@color/azul"
+                            android:textSize="@dimen/Size20sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:visibility="gone"
+        android:id="@+id/idBtnAsistio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/Size32dp"
@@ -376,6 +572,8 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:visibility="gone"
+        android:id="@+id/idBtnNoAsistio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/Size32dp"

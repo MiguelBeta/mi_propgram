@@ -11,9 +11,9 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 public class BuscarPacienteDocumento {
-    public static void buscarUsuario(String documento, RegistroCallback callback) {
+    public static void buscarUsuario(String identification, RegisterCallback callback) {
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("datosPacientes");
-        Query query = databaseReference.orderByChild("pacienteDocumento").equalTo(documento);
+        Query query = databaseReference.orderByChild("pacienteDocumento").equalTo(identification);
 
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -21,9 +21,9 @@ public class BuscarPacienteDocumento {
                 if (dataSnapshot.exists()) {
                     DataSnapshot firstChild = dataSnapshot.getChildren().iterator().next();
                     DataFileUsers registroEncontrado = firstChild.getValue(DataFileUsers.class);
-                    callback.onRegistroEncontrado(registroEncontrado);
+                    callback.onFindRegister(registroEncontrado);
                 } else {
-                    callback.onRegistroNoEncontrado();
+                    callback.onNotFoundRegister();
                 }
             }
 
@@ -34,8 +34,8 @@ public class BuscarPacienteDocumento {
         });
     }
 
-    public interface RegistroCallback {
-        void onRegistroEncontrado(DataFileUsers registro);
-        void onRegistroNoEncontrado();
+    public interface RegisterCallback {
+        void onFindRegister(DataFileUsers registro);
+        void onNotFoundRegister();
     }
 }

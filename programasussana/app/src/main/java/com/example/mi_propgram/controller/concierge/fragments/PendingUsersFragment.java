@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import com.example.mi_propgram.R;
 import com.example.mi_propgram.controller.adapter.GenericAdapter;
@@ -23,12 +24,14 @@ import java.util.List;
 
 public class PendingUsersFragment extends Fragment {
 
+    private ProgressBar idProgressBar;
     private RecyclerView recyclerView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_users, container, false);
         recyclerView = rootView.findViewById(R.id.idRcvListadoUsuariosCita);
+        idProgressBar = rootView.findViewById(R.id.idProgressBar);
 
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(requireContext());
@@ -59,8 +62,8 @@ public class PendingUsersFragment extends Fragment {
                             }
                         }
                 );
+                idProgressBar.setVisibility(View.GONE);
                 recyclerView.setAdapter(usuarioCitaAdapter);
-
             }
 
             @Override

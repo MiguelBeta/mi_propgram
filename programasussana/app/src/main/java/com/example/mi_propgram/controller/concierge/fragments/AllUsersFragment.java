@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import com.example.mi_propgram.R;
 import com.example.mi_propgram.controller.adapter.GenericAdapter;
@@ -27,6 +28,7 @@ import java.util.List;
 public class AllUsersFragment extends Fragment {
 
     private RecyclerView recyclerView;
+    private ProgressBar idProgressBar;
 
     @Nullable
     @Override
@@ -34,6 +36,7 @@ public class AllUsersFragment extends Fragment {
 
         View rootView = inflater.inflate(R.layout.fragment_users, container, false);
         recyclerView = rootView.findViewById(R.id.idRcvListadoUsuariosCita);
+        idProgressBar = rootView.findViewById(R.id.idProgressBar);
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(requireContext());
         recyclerView.setLayoutManager(layoutManager);
@@ -71,7 +74,7 @@ public class AllUsersFragment extends Fragment {
                             }
                         }
                 );
-
+                idProgressBar.setVisibility(View.GONE);
                 recyclerView.setAdapter(usuarioCitaAdapter);
             }
 
