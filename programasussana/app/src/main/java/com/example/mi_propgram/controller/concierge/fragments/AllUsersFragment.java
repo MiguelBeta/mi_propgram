@@ -1,5 +1,6 @@
 package com.example.mi_propgram.controller.concierge.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -8,12 +9,14 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.mi_propgram.R;
 import com.example.mi_propgram.controller.adapter.GenericAdapter;
+import com.example.mi_propgram.controller.concierge.DetalleUsuarioActivity;
 import com.example.mi_propgram.controller.consultas.ListarPacientesCita;
 import com.example.mi_propgram.holders.UsuarioCitaViewHolder;
 import com.example.mi_propgram.models.DataFileUsers;
@@ -32,10 +35,16 @@ public class AllUsersFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_users, container, false);
         recyclerView = rootView.findViewById(R.id.idRcvListadoUsuariosCita);
 
-
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(requireContext());
         recyclerView.setLayoutManager(layoutManager);
 
+        setupGetData();
+
+
+        return rootView;
+    }
+
+    private void setupGetData() {
         ListarPacientesCita.obtenerDatos(new ListarPacientesCita.CallbackInterface<List<DataFileUsers>>() {
             @Override
             public void onSuccess(List<DataFileUsers> result) {
@@ -54,7 +63,9 @@ public class AllUsersFragment extends Fragment {
                                 viewHolder.render(item, new UsuarioCitaViewHolder.OnItemClickListener() {
                                     @Override
                                     public void onClick(DataFileUsers dataFileUsers) {
-                                        Bundle args = new Bundle();
+                                        Intent intent = new Intent(requireActivity(), DetalleUsuarioActivity.class);
+                                        intent.putExtra("idUser", dataFileUsers.pacienteDocumento);
+                                        startActivity(intent);
                                     }
                                 });
                             }
@@ -66,9 +77,9 @@ public class AllUsersFragment extends Fragment {
 
             @Override
             public void onError(String errorMessage) {
-
+                //
             }
         });
-        return rootView;
     }
+
 }
