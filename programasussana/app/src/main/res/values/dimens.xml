@@ -7,4 +7,5 @@
     <dimen name="Size20dp">20dp</dimen>
     <dimen name="Size15dp">15dp</dimen>
     <dimen name="Size32dp">32dp</dimen>
+    <dimen name="Size5dp">5dp</dimen>
 </resources>

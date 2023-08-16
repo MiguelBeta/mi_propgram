@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/Size10dp"
+    android:elevation="@dimen/Size10dp"
+    app:cardCornerRadius="@dimen/Size8dp"
+    app:cardElevation="@dimen/Size10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/idTxtNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_border_button_right"
+            android:fontFamily="@font/arial_rounded_mt_bold"
+            android:padding="@dimen/Size8dp"
+            android:text="Miguel Andres Sanchez Martinez"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/idTxtIdentificacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/Size8dp"
+            android:fontFamily="@font/arial_rounded_mt_bold"
+
+            android:text="10028078098"
+            android:textColor="@color/verde_oscuro"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/idTxtTipoCita"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/Size10dp"
+            android:layout_marginEnd="@dimen/Size8dp"
+            android:padding="@dimen/Size8dp"
+            android:text="Tipo de cita"
+            android:textColor="@color/verde_oscuro"
+            app:layout_constraintEnd_toEndOf="@+id/idTxtIdentificacion"
+            app:layout_constraintTop_toBottomOf="@+id/idTxtIdentificacion" />
+
+        <TextView
+            android:id="@+id/idTxtLugar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/Size10dp"
+            android:layout_marginBottom="@dimen/Size5dp"
+            android:fontFamily="@font/arial_rounded_mt_bold"
+            android:text="HOSPITAL SUSANA LOPEZ DE VALENCIA E.S.E  SEDE SAN CAMILO"
+            android:textAlignment="center"
+            android:textColor="@color/verde_oscuro"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/idTxtTipoCita" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
