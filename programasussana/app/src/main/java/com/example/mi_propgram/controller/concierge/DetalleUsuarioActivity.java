@@ -1,5 +1,8 @@
 package com.example.mi_propgram.controller.concierge;
 
+import static com.example.mi_propgram.utils.Constantes.ESTADO_ASISTIO;
+import static com.example.mi_propgram.utils.Constantes.ESTADO_PENDIENTE;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
@@ -14,17 +17,18 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mi_propgram.R;
+import com.example.mi_propgram.controller.consultas.ActualizarEstadoCita;
 import com.example.mi_propgram.controller.consultas.BuscarPacienteDocumento;
 import com.example.mi_propgram.models.DataFileUsers;
+import com.example.mi_propgram.utils.Constantes;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class DetalleUsuarioActivity extends AppCompatActivity {
     private ProgressBar idProgressBar;
-    private TextView idTxtNamePerson, idTxtNameHospital, idTxtPhone, idTxtGenger, idTxtIdentification, idTxtAge,
-            idTxtTypeQuote, idTxtInitialDate, idTxtDuration, idTxtActivity, idTxtNameDoctor, idTxtTurnDate, idTxtSpecialty;
+    private TextView idTxtNamePerson, idTxtNameHospital, idTxtPhone, idTxtGenger, idTxtIdentification, idTxtAge, idTxtTypeQuote, idTxtInitialDate, idTxtDuration, idTxtActivity, idTxtNameDoctor, idTxtTurnDate, idTxtSpecialty;
     private Button idBtnAsistio, idBtnNoAsistio;
     private ScrollView scrollView;
-
+    private String idUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,11 +37,42 @@ public class DetalleUsuarioActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         if (intent != null) {
-            String idUser = intent.getStringExtra("idUser");
+            idUser = intent.getStringExtra("idUser");
             setupGetData(idUser);
         }
 
         setupInitializeUi();
+        setupClickListeners();
+    }
+
+    private void setupClickListeners() {
+        idBtnAsistio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                idProgressBar.setVisibility(View.VISIBLE);
+                scrollView.setVisibility(View.GONE);
+                idBtnAsistio.setVisibility(View.GONE);
+                idBtnNoAsistio.setVisibility(View.GONE);
+
+                ActualizarEstadoCita.updateStatus(idUser, "Asistio", new ActualizarEstadoCita.UpdateCallback() {
+                    @Override
+                    public void onSuccessUpdate() {
+                        Toast.makeText(DetalleUsuarioActivity.this, "Estado del paciente actualizado correctamente", Toast.LENGTH_SHORT).show();
+                        setupGetData(idUser);
+                    }
+
+                    @Override
+                    public void onNotFountRegister() {
+                        Toast.makeText(DetalleUsuarioActivity.this, "No se encontro al paciente " + idUser, Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onErrorUpdate(String errorMessage) {
+                        Toast.makeText(DetalleUsuarioActivity.this, "Ocurrio un error actualizando el estado, por favor vuelva a intentarlo", Toast.LENGTH_LONG).show();
+                    }
+                });
+            }
+        });
     }
 
     private void setupInitializeUi() {
@@ -94,6 +129,11 @@ public class DetalleUsuarioActivity extends AppCompatActivity {
         idTxtTurnDate.setText(register.turnoMedicoFechaTurno);
         idTxtSpecialty.setText(register.especialidadDescripcion);
 
-
+        if (register.estado.equals(ESTADO_ASISTIO)) {
+            idBtnAsistio.setEnabled(false);
+            idBtnNoAsistio.setEnabled(false);
+            idBtnAsistio.setAlpha(.6f);
+            idBtnNoAsistio.setAlpha(.6f);
+        }
     }
 }

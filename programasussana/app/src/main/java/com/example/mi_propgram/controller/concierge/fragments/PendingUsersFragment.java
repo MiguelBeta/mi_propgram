@@ -2,6 +2,7 @@ package com.example.mi_propgram.controller.concierge.fragments;
 
 import static com.example.mi_propgram.utils.Constantes.ESTADO_PENDIENTE;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -15,6 +16,7 @@ import android.widget.ProgressBar;
 
 import com.example.mi_propgram.R;
 import com.example.mi_propgram.controller.adapter.GenericAdapter;
+import com.example.mi_propgram.controller.concierge.DetalleUsuarioActivity;
 import com.example.mi_propgram.controller.consultas.ListarPacientesCitaEstado;
 import com.example.mi_propgram.holders.UsuarioCitaViewHolder;
 import com.example.mi_propgram.models.DataFileUsers;
@@ -56,7 +58,9 @@ public class PendingUsersFragment extends Fragment {
                                 viewHolder.render(item, new UsuarioCitaViewHolder.OnItemClickListener() {
                                     @Override
                                     public void onClick(DataFileUsers dataFileUsers) {
-                                        Bundle args = new Bundle();
+                                        Intent intent = new Intent(requireActivity(), DetalleUsuarioActivity.class);
+                                        intent.putExtra("idUser", dataFileUsers.pacienteDocumento);
+                                        startActivity(intent);
                                     }
                                 });
                             }
