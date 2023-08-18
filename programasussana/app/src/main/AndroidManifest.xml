@@ -25,22 +25,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".controller.securityBoss.SecurityBossActivity"
-            android:exported="true">
+            android:exported="true" />
 
-        </activity>
         <activity
             android:name=".controller.concierge.ReadCredentialsActivity"
             android:exported="false" />
+
         <activity
             android:name=".controller.concierge.ConciergeActivity"
-            android:exported="true"/>
-        <activity
-            android:name=".Administrador"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
             android:exported="true" />
     </application>
 
