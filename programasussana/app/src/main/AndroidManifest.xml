@@ -16,6 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mi_propgram"
         tools:targetApi="31">
+
         <activity
             android:name=".controller.admin.MenuActivity"
             android:exported="true">
