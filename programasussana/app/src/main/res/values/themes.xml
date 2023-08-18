@@ -10,7 +10,7 @@
         <item name="android:statusBarColor">@color/verde_oscuro</item>
 
         <!-- Define the font size for your app -->
-        <item name="android:textSize">@dimen/Size16sp</item>
+        <item name="android:textSize">@dimen/Size14sp</item>
 
         <!-- Define other global styles for your app -->
         <item name="android:textColor">@color/azul</item>
