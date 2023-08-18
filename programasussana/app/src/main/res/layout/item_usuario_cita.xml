@@ -33,7 +33,7 @@
             android:fontFamily="@font/arial_rounded_mt_bold"
 
             android:text="10028078098"
-            android:textColor="@color/verde_oscuro"
+            android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -45,6 +45,7 @@
             android:layout_marginEnd="@dimen/Size8dp"
             android:padding="@dimen/Size8dp"
             android:text="Tipo de cita"
+            android:fontFamily="@font/arial_rounded_mt_bold"
             android:textColor="@color/verde_oscuro"
             app:layout_constraintEnd_toEndOf="@+id/idTxtIdentificacion"
             app:layout_constraintTop_toBottomOf="@+id/idTxtIdentificacion" />
@@ -57,6 +58,7 @@
             android:layout_marginBottom="@dimen/Size5dp"
             android:fontFamily="@font/arial_rounded_mt_bold"
             android:text="HOSPITAL SUSANA LOPEZ DE VALENCIA E.S.E  SEDE SAN CAMILO"
+            android:textSize="@dimen/Size14sp"
             android:textAlignment="center"
             android:textColor="@color/verde_oscuro"
             android:textStyle="bold"
