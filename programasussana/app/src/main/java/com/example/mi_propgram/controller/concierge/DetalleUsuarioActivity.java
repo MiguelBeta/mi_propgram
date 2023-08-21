@@ -7,9 +7,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.ScrollView;
@@ -31,6 +33,7 @@ public class DetalleUsuarioActivity extends AppCompatActivity {
     private Button idBtnAsistio, idBtnNoAsistio;
     private ScrollView scrollView;
     private String idUser;
+    private ImageView idBtnArrowBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +51,12 @@ public class DetalleUsuarioActivity extends AppCompatActivity {
     }
 
     private void setupClickListeners() {
+        idBtnArrowBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
         idBtnAsistio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -103,6 +112,7 @@ public class DetalleUsuarioActivity extends AppCompatActivity {
         idBtnAsistio = findViewById(R.id.idBtnAsistio);
         idBtnNoAsistio = findViewById(R.id.idBtnNoAsistio);
         scrollView = findViewById(R.id.scrollView);
+        idBtnArrowBack = findViewById(R.id.idBtnArrowBack);
     }
 
     private void setupGetData(String idUser) {
@@ -138,6 +148,7 @@ public class DetalleUsuarioActivity extends AppCompatActivity {
         idTxtNameDoctor.setText(register.turnoMedicoMedicoNombreCompleto);
         idTxtTurnDate.setText(register.turnoMedicoFechaTurno);
         idTxtSpecialty.setText(register.especialidadDescripcion);
+
 
         if (register.estado.equals(ESTADO_ASISTIO)) {
             idBtnAsistio.setVisibility(View.GONE);

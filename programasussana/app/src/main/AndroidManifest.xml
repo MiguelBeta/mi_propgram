@@ -23,13 +23,7 @@
         </activity>
         <activity
             android:name=".controller.admin.MenuActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true"/>
         <activity
             android:name=".controller.securityBoss.SecurityBossActivity"
             android:exported="true" />
@@ -44,7 +38,13 @@
             android:exported="true" />
         <activity
             android:name=".controller.concierge.ConciergeActivity"
-            android:exported="true" />
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

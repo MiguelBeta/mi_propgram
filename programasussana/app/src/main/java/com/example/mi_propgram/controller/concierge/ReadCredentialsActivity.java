@@ -44,7 +44,8 @@ public class ReadCredentialsActivity extends AppCompatActivity {
         Intent intent = getIntent();
         if (intent != null && (intent.getExtras() != null)) {
             isAdminParams = intent.getStringExtra("AdminToSearch");
-            Toast.makeText(this, "" + isAdminParams, Toast.LENGTH_SHORT).show();
+        } else {
+            isAdminParams = "Concierge";
         }
     }
 
@@ -60,7 +61,7 @@ public class ReadCredentialsActivity extends AppCompatActivity {
                             idProgressBar.setVisibility(View.GONE);
                             if (isAdminParams.equals("Delete")) {
                                 showAlertConfirm(register.pacienteDocumento, register.pacienteNombre);
-                            } else {
+                            } else if (isAdminParams.equals("Concierge")) {
                                 Intent intent = new Intent(getApplicationContext(), DetalleUsuarioActivity.class);
                                 intent.putExtra("idUser", register.pacienteDocumento);
                                 startActivity(intent);
