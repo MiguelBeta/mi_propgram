@@ -39,4 +39,9 @@ public class MenuActivity extends AppCompatActivity {
         idBtnManageQuotes = findViewById(R.id.idBtnManageQuotes);
         idBtnManageQuotes = findViewById(R.id.idBtnManageQuotes);
     }
+
+    @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
+    }
 }

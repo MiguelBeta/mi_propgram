@@ -1,7 +1,22 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.Mi_propgram" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryVariant">@color/verde_oscuro</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:statusBarColor">@color/verde_oscuro</item>
+
+        <!-- Define the font size for your app -->
+        <item name="android:textSize">@dimen/Size14sp</item>
+
+        <!-- Define other global styles for your app -->
+        <item name="android:textColor">@color/azul</item>
+        <!-- Add more global style attributes as needed -->
+
     </style>
+
+    <style name="Theme.Mi_propgram" parent="Base.Theme.Mi_propgram" />
 </resources>

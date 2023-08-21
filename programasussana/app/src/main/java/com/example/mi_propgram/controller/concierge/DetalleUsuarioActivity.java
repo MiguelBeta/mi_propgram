@@ -19,6 +19,8 @@ import android.widget.Toast;
 import com.example.mi_propgram.R;
 import com.example.mi_propgram.controller.consultas.ActualizarEstadoCita;
 import com.example.mi_propgram.controller.consultas.BuscarPacienteDocumento;
+import com.example.mi_propgram.controller.interfaces.RegisterCallback;
+import com.example.mi_propgram.controller.interfaces.UpdateCallback;
 import com.example.mi_propgram.models.DataFileUsers;
 import com.example.mi_propgram.utils.Constantes;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -54,7 +56,7 @@ public class DetalleUsuarioActivity extends AppCompatActivity {
                 idBtnAsistio.setVisibility(View.GONE);
                 idBtnNoAsistio.setVisibility(View.GONE);
 
-                ActualizarEstadoCita.updateStatus(idUser, "Asistio", new ActualizarEstadoCita.UpdateCallback() {
+                ActualizarEstadoCita.updateStatus(idUser, "Asistio", new UpdateCallback() {
                     @Override
                     public void onSuccessUpdate() {
                         Toast.makeText(DetalleUsuarioActivity.this, "Estado del paciente actualizado correctamente", Toast.LENGTH_SHORT).show();
@@ -64,11 +66,19 @@ public class DetalleUsuarioActivity extends AppCompatActivity {
                     @Override
                     public void onNotFountRegister() {
                         Toast.makeText(DetalleUsuarioActivity.this, "No se encontro al paciente " + idUser, Toast.LENGTH_SHORT).show();
+                        idProgressBar.setVisibility(View.GONE);
+                        scrollView.setVisibility(View.VISIBLE);
+                        idBtnAsistio.setVisibility(View.VISIBLE);
+                        idBtnNoAsistio.setVisibility(View.VISIBLE);
                     }
 
                     @Override
                     public void onErrorUpdate(String errorMessage) {
                         Toast.makeText(DetalleUsuarioActivity.this, "Ocurrio un error actualizando el estado, por favor vuelva a intentarlo", Toast.LENGTH_LONG).show();
+                        idProgressBar.setVisibility(View.GONE);
+                        scrollView.setVisibility(View.VISIBLE);
+                        idBtnAsistio.setVisibility(View.VISIBLE);
+                        idBtnNoAsistio.setVisibility(View.VISIBLE);
                     }
                 });
             }
@@ -96,7 +106,7 @@ public class DetalleUsuarioActivity extends AppCompatActivity {
     }
 
     private void setupGetData(String idUser) {
-        BuscarPacienteDocumento.buscarUsuario(idUser, new BuscarPacienteDocumento.RegisterCallback() {
+        BuscarPacienteDocumento.searchUserByIdentification(idUser, new RegisterCallback() {
             @Override
             public void onFindRegister(DataFileUsers register) {
                 idProgressBar.setVisibility(View.GONE);
@@ -130,10 +140,8 @@ public class DetalleUsuarioActivity extends AppCompatActivity {
         idTxtSpecialty.setText(register.especialidadDescripcion);
 
         if (register.estado.equals(ESTADO_ASISTIO)) {
-            idBtnAsistio.setEnabled(false);
-            idBtnNoAsistio.setEnabled(false);
-            idBtnAsistio.setAlpha(.6f);
-            idBtnNoAsistio.setAlpha(.6f);
+            idBtnAsistio.setVisibility(View.GONE);
+            idBtnNoAsistio.setVisibility(View.GONE);
         }
     }
 }

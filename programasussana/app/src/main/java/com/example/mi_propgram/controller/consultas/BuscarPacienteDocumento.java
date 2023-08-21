@@ -2,6 +2,7 @@ package com.example.mi_propgram.controller.consultas;
 
 import androidx.annotation.NonNull;
 
+import com.example.mi_propgram.controller.interfaces.RegisterCallback;
 import com.example.mi_propgram.models.DataFileUsers;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -11,7 +12,7 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 public class BuscarPacienteDocumento {
-    public static void buscarUsuario(String identification, RegisterCallback callback) {
+    public static void searchUserByIdentification(String identification, RegisterCallback callback) {
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("datosPacientes");
         Query query = databaseReference.orderByChild("pacienteDocumento").equalTo(identification);
 
@@ -34,8 +35,4 @@ public class BuscarPacienteDocumento {
         });
     }
 
-    public interface RegisterCallback {
-        void onFindRegister(DataFileUsers registro);
-        void onNotFoundRegister();
-    }
 }

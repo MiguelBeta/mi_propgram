@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
+import android.widget.Toast;
 
 import com.example.mi_propgram.R;
 import com.example.mi_propgram.controller.adapter.UsuariosCitaPagerAdapter;
@@ -41,8 +42,11 @@ public class ListadoPacientesActivity extends AppCompatActivity {
 
     private void setupGetParams() {
         Intent intent = getIntent();
-        if (intent != null) {
+        if (intent != null && (intent.getExtras() != null)) {
             isAdmin = intent.getStringExtra("isAdmin");
+            if (isAdmin.equals("adminParam")) {
+                idBtnOptions.setVisibility(View.VISIBLE);
+            }
         }
     }
 
@@ -65,7 +69,9 @@ public class ListadoPacientesActivity extends AppCompatActivity {
                     public boolean onMenuItemClick(MenuItem item) {
                         switch (item.getItemId()) {
                             case R.id.id_option_delete: {
-
+                                Intent intent = new Intent(v.getContext(), ReadCredentialsActivity.class);
+                                intent.putExtra("AdminToSearch", "Delete");
+                                startActivity(intent);
                             }
                             return true;
                             case R.id.id_option_add:

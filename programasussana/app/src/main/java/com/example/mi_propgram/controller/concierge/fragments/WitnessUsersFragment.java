@@ -18,6 +18,7 @@ import com.example.mi_propgram.R;
 import com.example.mi_propgram.controller.adapter.GenericAdapter;
 import com.example.mi_propgram.controller.concierge.DetalleUsuarioActivity;
 import com.example.mi_propgram.controller.consultas.ListarPacientesCitaEstado;
+import com.example.mi_propgram.controller.interfaces.CallbackInterface;
 import com.example.mi_propgram.holders.UsuarioCitaViewHolder;
 import com.example.mi_propgram.models.DataFileUsers;
 
@@ -38,7 +39,7 @@ public class WitnessUsersFragment extends Fragment {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(requireContext());
         recyclerView.setLayoutManager(layoutManager);
 
-        ListarPacientesCitaEstado.obtenerDatos(ESTADO_ASISTIO, new ListarPacientesCitaEstado.CallbackInterface<List<DataFileUsers>>() {
+        ListarPacientesCitaEstado.obtenerDatos(ESTADO_ASISTIO, new CallbackInterface<List<DataFileUsers>>() {
             @Override
             public void onSuccess(List<DataFileUsers> result) {
 

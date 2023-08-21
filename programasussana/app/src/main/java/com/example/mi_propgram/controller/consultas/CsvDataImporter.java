@@ -1,4 +1,4 @@
-package com.example.mi_propgram.controller;
+package com.example.mi_propgram.controller.consultas;
 
 import static com.example.mi_propgram.utils.Constantes.ESTADO_PENDIENTE;
 

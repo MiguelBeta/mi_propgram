@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.example.mi_propgram.R;
 import com.example.mi_propgram.controller.concierge.ListadoPacientesActivity;
 import com.example.mi_propgram.controller.consultas.InsertarNuevoPaciente;
+import com.example.mi_propgram.controller.interfaces.InsertPatientCallBack;
 import com.example.mi_propgram.models.DataFileUsers;
 import com.example.mi_propgram.utils.Constantes;
 import com.example.mi_propgram.utils.DateUtils;
@@ -79,10 +80,11 @@ public class AddUserQuoteActivity extends AppCompatActivity {
 
     private void insertData() {
         idProgressBar.setVisibility(View.VISIBLE);
-        InsertarNuevoPaciente.Insert(dataUser, new InsertarNuevoPaciente.InsertPatientCallBack() {
+        InsertarNuevoPaciente.Insert(dataUser, new InsertPatientCallBack() {
             @Override
             public void onSuccessInsert() {
                 Intent intent = new Intent(getApplicationContext(), ListadoPacientesActivity.class);
+                intent.putExtra("isAdmin", "adminParam");
                 startActivity(intent);
                 finish();
             }

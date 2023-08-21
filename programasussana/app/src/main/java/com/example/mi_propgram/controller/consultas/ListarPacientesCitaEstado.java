@@ -2,6 +2,7 @@ package com.example.mi_propgram.controller.consultas;
 
 import androidx.annotation.NonNull;
 
+import com.example.mi_propgram.controller.interfaces.CallbackInterface;
 import com.example.mi_propgram.models.DataFileUsers;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -37,8 +38,5 @@ public class ListarPacientesCitaEstado {
         });
     }
 
-    public interface CallbackInterface<T> {
-        void onSuccess(T result);
-        void onError(String errorMessage);
-    }
+
 }

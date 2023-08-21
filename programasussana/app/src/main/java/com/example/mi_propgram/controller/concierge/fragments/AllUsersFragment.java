@@ -19,6 +19,7 @@ import com.example.mi_propgram.R;
 import com.example.mi_propgram.controller.adapter.GenericAdapter;
 import com.example.mi_propgram.controller.concierge.DetalleUsuarioActivity;
 import com.example.mi_propgram.controller.consultas.ListarPacientesCita;
+import com.example.mi_propgram.controller.interfaces.CallbackInterface;
 import com.example.mi_propgram.holders.UsuarioCitaViewHolder;
 import com.example.mi_propgram.models.DataFileUsers;
 
@@ -48,7 +49,7 @@ public class AllUsersFragment extends Fragment {
     }
 
     private void setupGetData() {
-        ListarPacientesCita.obtenerDatos(new ListarPacientesCita.CallbackInterface<List<DataFileUsers>>() {
+        ListarPacientesCita.obtenerDatos(new CallbackInterface<List<DataFileUsers>>() {
             @Override
             public void onSuccess(List<DataFileUsers> result) {
                 GenericAdapter<DataFileUsers, UsuarioCitaViewHolder> usuarioCitaAdapter = new GenericAdapter<>(
