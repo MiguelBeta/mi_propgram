@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">mi_propgram</string>
+    <string name="app_name">H. Susana Lopez...</string>
 
     <!-- Botones> -->
     <string name="ingresar">ingresar</string>
@@ -56,8 +56,35 @@
             Otro
         </item>
     </string-array>
+
+    <string-array name="items_type_quote">
+        <item>Consulta médica general</item>
+        <item>Consulta de especialista</item>
+        <item>Cita de control o seguimiento</item>
+        <item>Consulta preoperatoria</item>
+        <item>Cita de resultados de pruebas</item>
+        <item>Consulta de salud de la mujer</item>
+        <item>Cita de salud del niño</item>
+        <item>Cita de control de enfermedades crónicas</item>
+        <item>Cita de terapia o rehabilitación</item>
+        <item>Cita de salud mental</item>
+        <item>Cita de atención urgente</item>
+        <item>Cita para pruebas diagnósticas</item>
+        <item>Cita de planificación familiar</item>
+        <item>Cita de nutrición o dieta</item>
+        <item>Cita de segunda opinión</item>
+    </string-array>
+
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="delete">Eliminar</string>
+    <string name="add_new">Añadir nuevo</string>
+    <string name="logout">Cerrar sesión</string>
+    <string name="name_user">Nombre</string>
+    <string name="phone">Teléfono</string>
+    <string name="info_paciente">Información del paciente</string>
+    <string name="date">Fecha</string>
 
 
 </resources>
