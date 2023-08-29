@@ -49,16 +49,16 @@ public class GuardScheduleAdapter extends RecyclerView.Adapter<GuardScheduleAdap
             holder.dayName.setText(guardSchedule.getDayName());
         } else {
             holder.dayName.setVisibility(View.GONE);
-        }
 
-        holder.idCardItem.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(v.getContext(), DetalleInfoGuardaActivity.class);
-                i.putExtra("nameGuard", guardSchedule.getName());
-                v.getContext().startActivity(i);
-            }
-        });
+            holder.idCardItem.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i = new Intent(v.getContext(), DetalleInfoGuardaActivity.class);
+                    i.putExtra("nameGuard", guardSchedule.getName());
+                    v.getContext().startActivity(i);
+                }
+            });
+        }
 
     }
 

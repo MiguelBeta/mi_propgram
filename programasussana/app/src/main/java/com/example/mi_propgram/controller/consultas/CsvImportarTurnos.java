@@ -9,6 +9,8 @@ import com.example.mi_propgram.models.GuardData;
 import com.example.mi_propgram.models.GuardSchedule;
 import com.google.firebase.database.DatabaseReference;
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -45,7 +47,7 @@ public class CsvImportarTurnos {
 
                         GuardData guardData = new GuardData();
                         guardData.setName(name.toUpperCase());
-                        guardData.setDayName(dayName);
+                        guardData.setDayName( StringUtils.stripAccents(dayName).toUpperCase());
                         guardData.setDayNumber(i);
                         guardData.setShift(shift);
 

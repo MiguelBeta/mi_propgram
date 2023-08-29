@@ -12,16 +12,18 @@
         android:layout_height="wrap_content">
 
         <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:gravity="center"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/idFilterLunes"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/Size8dp"
                 android:layout_weight="1"
+                android:background="@color/verde_oscuro"
+                android:padding="@dimen/Size8dp"
                 android:text="LUNES"
                 android:textStyle="bold" />
 
@@ -29,8 +31,8 @@
                 android:id="@+id/idFilterMartes"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/Size8dp"
                 android:layout_weight="1"
+                android:padding="@dimen/Size8dp"
                 android:text="MARTES"
                 android:textStyle="bold" />
 
@@ -38,7 +40,7 @@
                 android:id="@+id/idFilterMiercoles"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/Size8dp"
+                android:padding="@dimen/Size8dp"
                 android:layout_weight="1"
                 android:text="MIERCOLES"
                 android:textStyle="bold" />
@@ -47,7 +49,7 @@
                 android:id="@+id/idFilterJueves"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/Size8dp"
+                android:padding="@dimen/Size8dp"
                 android:layout_weight="1"
                 android:text="JUEVES"
                 android:textStyle="bold" />
@@ -56,7 +58,7 @@
                 android:id="@+id/idFilterViernes"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/Size8dp"
+                android:padding="@dimen/Size8dp"
                 android:layout_weight="1"
                 android:text="VIERNES"
                 android:textStyle="bold" />
@@ -65,7 +67,7 @@
                 android:id="@+id/idFilterSabado"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/Size8dp"
+                android:padding="@dimen/Size8dp"
                 android:layout_weight="1"
                 android:text="SABADO"
                 android:textStyle="bold" />
@@ -74,7 +76,7 @@
                 android:id="@+id/idFilterDomingo"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/Size8dp"
+                android:padding="@dimen/Size8dp"
                 android:layout_weight="1"
                 android:text="DOMINGO"
                 android:textStyle="bold" />
@@ -87,9 +89,9 @@
         android:layout_height="wrap_content" />
 
     <ProgressBar
-        android:visibility="gone"
         android:id="@+id/idProgressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:visibility="gone" />
 </LinearLayout>

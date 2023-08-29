@@ -1,6 +1,5 @@
 package com.example.mi_propgram.controller.consultas;
 
-import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,11 +13,12 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-import javax.annotation.ParametersAreNullableByDefault;
 
 public class ListarCuadroTurnosPorDia {
     public static void listGuardsByDayAndSort(@Nullable String targetDay, @Nullable String nameGuard, final ResponseListGuardsInterface<List<GuardData>> callback) {
@@ -33,6 +33,7 @@ public class ListarCuadroTurnosPorDia {
             filter = "name";
             paramEqualTo = nameGuard;
         }
+
 
         Query query = databaseReference.orderByChild(filter).equalTo(paramEqualTo);
         query.addListenerForSingleValueEvent(new ValueEventListener() {
