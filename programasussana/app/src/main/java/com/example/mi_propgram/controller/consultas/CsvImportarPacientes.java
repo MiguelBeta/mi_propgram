@@ -6,7 +6,6 @@ import android.content.Context;
 import android.net.Uri;
 
 import com.example.mi_propgram.models.DataFileUsers;
-import com.example.mi_propgram.utils.Constantes;
 import com.google.firebase.database.DatabaseReference;
 
 import org.apache.commons.csv.CSVFormat;
@@ -17,7 +16,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 
-public class CsvDataImporter {
+public class CsvImportarPacientes {
 
     public static void importCsvData(Context context, Uri uri, DatabaseReference databaseReference) {
         try {

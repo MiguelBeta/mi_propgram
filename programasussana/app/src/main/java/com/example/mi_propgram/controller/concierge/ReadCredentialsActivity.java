@@ -1,6 +1,5 @@
 package com.example.mi_propgram.controller.concierge;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -12,7 +11,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.mi_propgram.R;
-import com.example.mi_propgram.controller.consultas.BuscarPacienteDocumento;
+import com.example.mi_propgram.controller.consultas.BuscarPaciente;
 import com.example.mi_propgram.controller.consultas.EliminarPacienteDocumento;
 import com.example.mi_propgram.controller.interfaces.ConfirmationActionInterface;
 import com.example.mi_propgram.controller.interfaces.DeleteCallback;
@@ -55,7 +54,7 @@ public class ReadCredentialsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (!idTxtIdentificationInput.getText().toString().isEmpty()) {
                     idProgressBar.setVisibility(View.VISIBLE);
-                    BuscarPacienteDocumento.searchUserByIdentification(idTxtIdentificationInput.getText().toString(), new RegisterCallback() {
+                    BuscarPaciente.search(idTxtIdentificationInput.getText().toString(), new RegisterCallback() {
                         @Override
                         public void onFindRegister(DataFileUsers register) {
                             idProgressBar.setVisibility(View.GONE);

@@ -1,18 +1,14 @@
 package com.example.mi_propgram.controller.concierge;
 
 import static com.example.mi_propgram.utils.Constantes.ESTADO_ASISTIO;
-import static com.example.mi_propgram.utils.Constantes.ESTADO_PENDIENTE;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -20,12 +16,10 @@ import android.widget.Toast;
 
 import com.example.mi_propgram.R;
 import com.example.mi_propgram.controller.consultas.ActualizarEstadoCita;
-import com.example.mi_propgram.controller.consultas.BuscarPacienteDocumento;
+import com.example.mi_propgram.controller.consultas.BuscarPaciente;
 import com.example.mi_propgram.controller.interfaces.RegisterCallback;
 import com.example.mi_propgram.controller.interfaces.UpdateCallback;
 import com.example.mi_propgram.models.DataFileUsers;
-import com.example.mi_propgram.utils.Constantes;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class DetalleUsuarioActivity extends AppCompatActivity {
     private ProgressBar idProgressBar;
@@ -116,7 +110,7 @@ public class DetalleUsuarioActivity extends AppCompatActivity {
     }
 
     private void setupGetData(String idUser) {
-        BuscarPacienteDocumento.searchUserByIdentification(idUser, new RegisterCallback() {
+        BuscarPaciente.search(idUser, new RegisterCallback() {
             @Override
             public void onFindRegister(DataFileUsers register) {
                 idProgressBar.setVisibility(View.GONE);

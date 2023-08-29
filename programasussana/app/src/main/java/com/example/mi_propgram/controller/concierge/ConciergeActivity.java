@@ -7,10 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.mi_propgram.R;
+import com.example.mi_propgram.controller.admin.CuadroTurnoSemanasActivity;
 
 public class ConciergeActivity extends AppCompatActivity {
 
-    private CardView idBtnReadCredentials, idCardViewInformation;
+    private CardView idBtnReadCredentials, idCardViewInformation, idBtnListInformacionTurno;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +20,7 @@ public class ConciergeActivity extends AppCompatActivity {
 
         idBtnReadCredentials = findViewById(R.id.idBtnReadCredetials);
         idCardViewInformation = findViewById(R.id.idCardViewInformation);
+        idBtnListInformacionTurno = findViewById(R.id.idBtnListInformacionTurno);
 
         setupButtonsListener();
     }
@@ -36,6 +38,13 @@ public class ConciergeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 intent[0] = new Intent(v.getContext(), ListadoPacientesActivity.class);
+                startActivity(intent[0]);
+            }
+        });
+        idBtnListInformacionTurno.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent[0] = new Intent(v.getContext(), CuadroTurnoSemanasActivity.class);
                 startActivity(intent[0]);
             }
         });
