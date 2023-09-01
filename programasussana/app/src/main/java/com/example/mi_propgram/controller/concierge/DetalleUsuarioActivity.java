@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -26,7 +27,7 @@ public class DetalleUsuarioActivity extends AppCompatActivity {
     private TextView idTxtNamePerson, idTxtNameHospital, idTxtPhone, idTxtGenger, idTxtIdentification, idTxtAge, idTxtTypeQuote, idTxtInitialDate, idTxtDuration, idTxtActivity, idTxtNameDoctor, idTxtTurnDate, idTxtSpecialty;
     private Button idBtnAsistio, idBtnNoAsistio;
     private ScrollView scrollView;
-    private String idUser;
+    private String idUser, ccScanner = "ccScanner";
     private ImageView idBtnArrowBack;
 
     @Override
@@ -34,14 +35,20 @@ public class DetalleUsuarioActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_usuario);
 
-        Intent intent = getIntent();
-        if (intent != null) {
-            idUser = intent.getStringExtra("idUser");
-            setupGetData(idUser);
-        }
-
+        setupParams();
         setupInitializeUi();
         setupClickListeners();
+    }
+
+    private void setupParams() {
+        Intent intent = getIntent();
+        if (intent != null && (intent.getExtras() != null)) {
+            idUser = intent.getStringExtra("idUser");
+            ccScanner = intent.getStringExtra("ccScanner");
+            setupGetData(idUser);
+        } else {
+            ccScanner = "Concierge";
+        }
     }
 
     private void setupClickListeners() {
@@ -148,5 +155,10 @@ public class DetalleUsuarioActivity extends AppCompatActivity {
             idBtnAsistio.setVisibility(View.GONE);
             idBtnNoAsistio.setVisibility(View.GONE);
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }

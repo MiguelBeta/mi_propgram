@@ -22,10 +22,10 @@ import com.example.mi_propgram.utils.AlertDialogBasic;
 public class ReadCredentialsActivity extends AppCompatActivity {
 
     private EditText idTxtIdentificationInput;
-    private Button idBtnSearchUser;
+    private Button idBtnSearchUser, idBtnScanCode;
     private ProgressBar idProgressBar;
 
-    private String isAdminParams;
+    private String isAdminParams, ccScanner;
 
 
     @Override
@@ -43,6 +43,7 @@ public class ReadCredentialsActivity extends AppCompatActivity {
         Intent intent = getIntent();
         if (intent != null && (intent.getExtras() != null)) {
             isAdminParams = intent.getStringExtra("AdminToSearch");
+            ccScanner = intent.getStringExtra("ccScanner");
         } else {
             isAdminParams = "Concierge";
         }
@@ -64,6 +65,7 @@ public class ReadCredentialsActivity extends AppCompatActivity {
                                 Intent intent = new Intent(getApplicationContext(), DetalleUsuarioActivity.class);
                                 intent.putExtra("idUser", register.pacienteDocumento);
                                 startActivity(intent);
+                                finish();
                             }
                         }
 
@@ -78,6 +80,16 @@ public class ReadCredentialsActivity extends AppCompatActivity {
                 }
             }
         });
+
+        idBtnScanCode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentScanner = new Intent(v.getContext(), LeerCodigoBatrrraActivity.class);
+                startActivity(intentScanner);
+                finish();
+            }
+        });
+
     }
 
     private void showAlertConfirm(String identification, String name) {
@@ -122,6 +134,7 @@ public class ReadCredentialsActivity extends AppCompatActivity {
     private void setupInitializeUi() {
         idTxtIdentificationInput = findViewById(R.id.idTxtIdentificationInput);
         idBtnSearchUser = findViewById(R.id.idBtnSearchUser);
+        idBtnScanCode = findViewById(R.id.idBtnScanCode);
         idProgressBar = findViewById(R.id.idProgressBar);
     }
 }
