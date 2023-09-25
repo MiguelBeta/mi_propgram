@@ -1,7 +1,7 @@
 package com.example.mi_propgram.controller.auth;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -10,8 +10,10 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.mi_propgram.MainActivity;
 import com.example.mi_propgram.R;
+import com.example.mi_propgram.controller.admin.MenuActivity;
+import com.example.mi_propgram.controller.concierge.ConciergeActivity;
+import com.example.mi_propgram.controller.jefeSecurity.JefeSeguridadActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -63,10 +65,9 @@ public class LoginActivity extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         String id = task.getResult().getUser().getUid();
                         getInfoUser(id);
-                        Log.e("Hola ", id);
-                        Toast.makeText(LoginActivity.this, id, Toast.LENGTH_SHORT).show();
+
                     } else {
-                        Toast.makeText(LoginActivity.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 }
             }).addOnFailureListener(new OnFailureListener() {
@@ -87,9 +88,8 @@ public class LoginActivity extends AppCompatActivity {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     if (snapshot.exists()) {
-                        String nombre = snapshot.child("rol").getValue(String.class);
-                        String email = snapshot.child("name").getValue(String.class);
-                        Toast.makeText(LoginActivity.this, "Nombre: " + nombre + ", Email: " + email, Toast.LENGTH_SHORT).show();
+                        String rol = snapshot.child("rol").getValue(String.class);
+                        setupRolIntentPermission(rol);
                     } else {
                         Toast.makeText(LoginActivity.this, "Error al obtener datos del usuario", Toast.LENGTH_SHORT).show();
                     }
@@ -98,11 +98,31 @@ public class LoginActivity extends AppCompatActivity {
                 @Override
                 public void onCancelled(@NonNull DatabaseError error) {
                     Toast.makeText(LoginActivity.this, "Error al obtener datos del usuario: " + error.getMessage(), Toast.LENGTH_SHORT).show();
-
                 }
             });
         } catch (Exception e) {
             Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void setupRolIntentPermission(String rol) {
+
+        switch (rol) {
+            case "Administrador": {
+                Intent intent = new Intent(this, MenuActivity.class);
+                startActivity(intent);
+                break;
+            }
+            case "Portero": {
+                Intent intent = new Intent(this, ConciergeActivity.class);
+                startActivity(intent);
+                break;
+            }
+            case "Jefe de seguridad": {
+                Intent intent = new Intent(this, JefeSeguridadActivity.class);
+                startActivity(intent);
+                break;
+            }
         }
     }
 
