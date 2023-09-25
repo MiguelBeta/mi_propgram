@@ -8,20 +8,24 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.mi_propgram.R;
+import com.example.mi_propgram.SplashActivity;
 import com.example.mi_propgram.controller.concierge.ListadoPacientesActivity;
+import com.example.mi_propgram.controller.consultas.sharedPref.SharedPreferencesManager;
 
 public class MenuActivity extends AppCompatActivity {
 
-    private CardView idBtnManageQuotes, btnUserSystem;
+    private CardView idBtnManageQuotes, btnUserSystem, idBtnCloseSession;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+        initUI();
+    }
 
-        setupInitializeUi();
+    private void initUI() {
+        initComponents();
         setupClickListeners();
-
     }
 
     private void setupClickListeners() {
@@ -33,6 +37,7 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         btnUserSystem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -40,12 +45,27 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        idBtnCloseSession.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setupSession();
+            }
+        });
     }
 
-    private void setupInitializeUi() {
+    private void setupSession() {
+        SharedPreferencesManager.remove(this, "isConnected");
+        Intent intent = new Intent(this, SplashActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    private void initComponents() {
         idBtnManageQuotes = findViewById(R.id.idBtnManageQuotes);
         idBtnManageQuotes = findViewById(R.id.idBtnManageQuotes);
         btnUserSystem = findViewById(R.id.btnUserSystem);
+        idBtnCloseSession = findViewById(R.id.idBtnCloseSession);
     }
 
 

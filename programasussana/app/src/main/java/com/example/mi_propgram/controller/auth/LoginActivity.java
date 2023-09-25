@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.mi_propgram.R;
 import com.example.mi_propgram.controller.admin.MenuActivity;
 import com.example.mi_propgram.controller.concierge.ConciergeActivity;
+import com.example.mi_propgram.controller.consultas.sharedPref.SharedPreferencesManager;
 import com.example.mi_propgram.controller.jefeSecurity.JefeSeguridadActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -89,6 +90,10 @@ public class LoginActivity extends AppCompatActivity {
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     if (snapshot.exists()) {
                         String rol = snapshot.child("rol").getValue(String.class);
+                        String name = snapshot.child("rol").getValue(String.class);
+                        SharedPreferencesManager.setString(LoginActivity.this, "role", rol);
+                        SharedPreferencesManager.setString(LoginActivity.this, "name", name);
+                        SharedPreferencesManager.setBoolean(LoginActivity.this, "isConnected", true);
                         setupRolIntentPermission(rol);
                     } else {
                         Toast.makeText(LoginActivity.this, "Error al obtener datos del usuario", Toast.LENGTH_SHORT).show();
@@ -111,16 +116,19 @@ public class LoginActivity extends AppCompatActivity {
             case "Administrador": {
                 Intent intent = new Intent(this, MenuActivity.class);
                 startActivity(intent);
+                finish();
                 break;
             }
             case "Portero": {
                 Intent intent = new Intent(this, ConciergeActivity.class);
                 startActivity(intent);
+                finish();
                 break;
             }
             case "Jefe de seguridad": {
                 Intent intent = new Intent(this, JefeSeguridadActivity.class);
                 startActivity(intent);
+                finish();
                 break;
             }
         }

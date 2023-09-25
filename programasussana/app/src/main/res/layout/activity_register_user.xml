@@ -8,11 +8,11 @@
     tools:context=".controller.auth.RegisterUserActivity">
 
     <FrameLayout
-        android:elevation="@dimen/Size10dp"
         android:id="@+id/frameLayout"
         android:layout_width="0dp"
         android:layout_height="?actionBarSize"
         android:background="@color/azul"
+        android:elevation="@dimen/Size10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -125,7 +125,8 @@
                 android:layout_marginTop="@dimen/Size10dp"
                 android:layout_marginEnd="@dimen/Size32dp"
                 android:background="@drawable/background_input"
-                android:hint="Contraseña" />
+                android:hint="Contraseña"
+                android:inputType="textPassword" />
 
             <Button
                 android:id="@+id/btnRegister"

@@ -63,7 +63,8 @@
                 android:layout_marginTop="@dimen/Size10dp"
                 android:layout_marginEnd="@dimen/Size32dp"
                 android:background="@drawable/background_input"
-                android:hint="Contraseña" />
+                android:hint="Contraseña"
+                android:inputType="textPassword" />
 
             <Button
                 android:id="@+id/btnLogin"

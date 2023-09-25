@@ -31,6 +31,9 @@
             android:exported="false" />
         <activity
             android:name=".controller.auth.LoginActivity"
+            android:exported="true" />
+        <activity
+            android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -49,9 +52,6 @@
             android:exported="false" />
         <activity
             android:name=".controller.admin.CuadroTurnoSemanasActivity"
-            android:exported="true" />
-        <activity
-            android:name=".EliminarDespuesActivity"
             android:exported="true" />
         <activity
             android:name=".controller.admin.AddUserQuoteActivity"

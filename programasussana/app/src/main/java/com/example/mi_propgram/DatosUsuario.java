@@ -2,7 +2,7 @@ package com.example.mi_propgram;
 
 public class DatosUsuario {
 
-    String claseid, nombre, cedula,  telefono, direccion, contrasena, fechaNacimiento, roles, genero;
+    String claseid, nombre, cedula, telefono, direccion, contrasena, fechaNacimiento, roles, genero;
 
 
     public DatosUsuario() {

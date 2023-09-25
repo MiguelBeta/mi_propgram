@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/itemUserSystem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/Size10dp"
+    android:layout_marginTop="@dimen/Size8dp"
+    android:layout_marginEnd="@dimen/Size10dp"
+    android:elevation="@dimen/Size10dp"
+    app:cardCornerRadius="@dimen/Size10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/verde_variant"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/Size32dp"
+            android:layout_height="@dimen/Size32dp"
+            android:layout_marginStart="@dimen/Size8dp"
+            android:layout_marginTop="@dimen/Size5dp"
+            android:layout_marginEnd="@dimen/Size10dp"
+            android:layout_marginBottom="@dimen/Size5dp"
+            android:src="@drawable/logo_acreditacion_salud_2" />
+
+        <TextView
+            android:id="@+id/tvNameUserSystem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Administrador"
+            android:textStyle="bold" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -9,7 +9,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingBottom="?actionBarSize">
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -45,9 +46,9 @@
                         android:id="@+id/textView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/arial_rounded_mt_bold"
                         android:text="@string/name_hospital"
                         android:textColor="@color/azul"
-                        android:fontFamily="@font/arial_rounded_mt_bold"
                         android:textSize="@dimen/Size20sp"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -232,6 +233,41 @@
                     android:text="Reportes"
                     android:textAlignment="textStart"
                     android:textColor="@color/verde_oscuro"
+                    android:textSize="@dimen/Size14sp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/idBtnCloseSession"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/Size15dp"
+            android:layout_marginBottom="?actionBarSize"
+            android:elevation="@dimen/Size8dp"
+            app:cardCornerRadius="@dimen/Size10dp"
+            app:cardElevation="@dimen/Size8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/Size8dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/cyborg_card" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/Size10dp"
+                    android:fontFamily="@font/arial_rounded_mt_bold"
+                    android:text="Cerrar sesión"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/design_default_color_error"
                     android:textSize="@dimen/Size14sp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
