@@ -30,31 +30,18 @@
 
     <!-- Componentes de Spinner de roles -->
     <string-array name="roles">
-        <item>
-            administrador
-        </item>
-        <item>
-            medico
-        </item>
-        <item>
-            Administrativo
-        </item>
-        <item>
-            portero
-        </item>
+        <item>Administrador</item>
+        <item>Medico</item>
+        <item>Administrativo</item>
+        <item>Portero</item>
+        <item>Jefe de seguridad</item>
     </string-array>
 
     <!-- Componentes de Spinner de genero -->
     <string-array name="genero">
-        <item>
-            Mujer
-        </item>
-        <item>
-            Hombre
-        </item>
-        <item>
-            Otro
-        </item>
+        <item>Mujer</item>
+        <item>Hombre</item>
+        <item>Otro</item>
     </string-array>
 
     <string-array name="items_type_quote">

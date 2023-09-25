@@ -12,7 +12,7 @@ import com.example.mi_propgram.controller.concierge.ListadoPacientesActivity;
 
 public class MenuActivity extends AppCompatActivity {
 
-    private CardView idBtnManageQuotes;
+    private CardView idBtnManageQuotes, btnUserSystem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,11 +33,19 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        btnUserSystem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), ListUsersSystemActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void setupInitializeUi() {
         idBtnManageQuotes = findViewById(R.id.idBtnManageQuotes);
         idBtnManageQuotes = findViewById(R.id.idBtnManageQuotes);
+        btnUserSystem = findViewById(R.id.btnUserSystem);
     }
 
 
